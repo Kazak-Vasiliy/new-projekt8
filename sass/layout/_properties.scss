@@ -1,0 +1,53 @@
+.properties {
+    display: flex;
+    justify-content: space-between;
+}
+
+.properties__item {
+    &::before {
+        display: block;
+        content: '';
+        height: 120px;
+        background-color: var(--section-background);
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 30px;
+        border-radius: 4px;
+    }
+
+    width: 270px;
+}
+.properties__text {
+    @include font(400, 14px, 0.03em, 1.71);
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--secod-color);
+}
+
+// .antenna::before {
+//     background-image: url(../svg/antenna.svg);
+// }
+
+// .clock::before {
+//     background-image: url(../svg/clock.svg);
+// }
+
+// .diagram::before {
+//     background-image: url(../svg/diagram.svg);
+// }
+
+// .astronaut::before {
+//     background-image: url(../svg/astronaut.svg);
+// }
+
+$icons:'antenna','clock','diagram','astronaut';
+
+@mixin generateImg($iconList){
+    @each $iconName in $iconList {
+        .#{$iconName}::before {
+            background-image: url(/svg/#{$iconName}.svg);
+        }
+    }
+}
+@include generateImg($icons);
+

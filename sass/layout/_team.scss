@@ -1,0 +1,56 @@
+.team {
+    background-color: var(--section-background);
+}
+
+.team__list {
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: -15px; вариант 3 */
+}
+
+.team__item {
+    margin-right: 30px;
+    /* вариант 1 */
+    margin-top: 30px;
+    /*  вариант 1 */
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    width: 270px;
+    background-color: var(--white-color);
+    /* flex-basis: calc((100%-90px)/4); вариант 1 */
+    /* margin: 15px; вариант 3 */
+    &:nth-child(4n) {
+        margin-right: 0;
+        /*вариант 1*/
+    }
+    &:nth-child(-n+4) {
+        margin-top: 0;
+        /*вариант 1 */
+    }
+}
+
+/* ======================АЛЬТЕРНАТИВА================== */
+/* .team__item:not(:nth-child(4n)){
+    margin-right: 30px; вариант 2
+}
+.team__item:not(:nth-child(-n+4)){
+    margin-top: 30px;   вариант 2
+} */
+.team__img {
+    display: block;
+}
+
+.team__title {
+    @include font(500, 16px, 0.03em, 1.18);
+    margin-top: 30px;
+    text-align: center;
+}
+
+.team__text {
+    @include font(400, 16px, 0.03em, 1.18);
+    margin-top: 10px;
+    margin-bottom: 16px;
+    text-align: center;
+    color: var(--secod-color);
+}
+

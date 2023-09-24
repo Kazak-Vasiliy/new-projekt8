@@ -1,0 +1,84 @@
+.footer {
+    padding: 60px 0;
+    color: var(--white-color);
+    background-color: var(--footer-background);
+}
+
+.footer__wrapper {
+    display: flex;
+    align-items: baseline;
+}
+
+.addres-list {
+    &__item:nth-child(2) {
+        margin-top: 9px;
+        margin-bottom: 9px;
+    }
+    margin-top: 20px;
+}
+
+.addres-list__link {
+    &:hover,
+    &:focus{
+        color: var(--akcent-color);
+        fill: var(--akcent-color);
+    }
+    @include font(400, 14px, 0.03em, 1.71);
+    display: block;
+    transition: color 250ms var(--cubiq);
+    color: var(--secod-color);
+    font-style: normal;
+    &--akcent {
+        color: currentColor;
+    }
+}
+
+.toadd {
+    margin-left: 70px;
+}
+
+.toadd__list {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.toadd__link {
+    @extend %iconsLink;
+    &:hover,
+    &:focus{
+        background-color: var(--akcent-color);
+        color: var(--white-color);
+    }
+    fill: var(--white-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.folowme {
+    margin-left: 93px;
+}
+
+.folowme__title {
+    margin-bottom: 20px;
+    display: inline-flex;
+}
+
+.form {
+    display: flex;
+}
+
+.form__email {
+    @include font(400, 16px, 0.03em, 1.25);
+    width: 358px;
+    height: 50px;
+    border: none;
+    outline: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: transparent;
+    padding-left: 16px;
+    color: var(--white-color);
+}
+
+.form__send {
+    fill: var(--white-color);
+    margin-left: 10px;
+}

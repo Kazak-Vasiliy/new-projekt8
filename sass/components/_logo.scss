@@ -1,0 +1,9 @@
+.logo {
+    @include font(700, 26px, 0.03em, 1.19);
+    font-family: var(--akcent-font);
+    color: inherit;
+
+    &--akcent {
+        color: var(--akcent-color);
+    }
+}

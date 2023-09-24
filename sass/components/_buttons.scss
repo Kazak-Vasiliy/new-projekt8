@@ -1,0 +1,46 @@
+// %button{
+// @extend %button;
+// }
+.hero__btn {
+    @extend %buttons;
+    display: inline-block;
+    padding: 10px 32px;
+    text-align: center;
+    font-family: inherit;
+}
+.form__btn {
+    @extend %buttons;
+    width: 200px;
+    display: inline-flex;
+    padding: 10px 28px;
+    margin-left: 12px;
+    align-items: center;
+    justify-content: center; 
+}
+.portfolio-btn {
+    &__item:not(:first-child) {
+        margin-left: 8px;
+    }
+
+    display: flex;
+    width: 575px;
+    margin: 0 auto 50px;
+}
+.portfolio__button {
+    @include font(500, 16px, 0.03em, 1.62);
+    display: inline-block;
+    transition: background-color 250ms var(--cubiq), color 250ms var(--cubiq);
+    padding: 6px 22px;
+    text-align: center;
+    cursor: pointer;
+    font-family: inherit;
+    border: 0 solid transparent;
+    border-radius: 4px;
+    background-color: var(--section-background);
+
+    &:hover,
+    &:focus {
+        color: var(--white-color);
+        background-color: var(--akcent-color);
+    }
+}

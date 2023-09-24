@@ -1,0 +1,23 @@
+.icons-list,
+.toadd__list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.icons-list__item:not(:first-child),
+.toadd__item:not(:first-child) {
+    margin-left: 10px;
+}
+
+.icons-list__link {
+    @extend %iconsLink;
+    &:hover,
+    &:focus{
+        background-color: var(--akcent-color);
+        color: var(--white-color);
+    }
+}
+.icons-list__social {
+    fill: currentColor;
+}
