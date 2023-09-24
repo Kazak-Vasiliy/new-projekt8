@@ -14,21 +14,6 @@
   --akcent-font: "Raleway", sans-serif;
 }
 
-.contakt-list__link, .nav__link {
-  position: relative;
-  -webkit-transition: fill 250ms var(--cubiq), color 250ms var(--cubiq);
-  transition: fill 250ms var(--cubiq), color 250ms var(--cubiq);
-  padding-top: 32px;
-  padding-bottom: 32px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-}
-
 .toadd__link, .icons-list__link {
   -webkit-transition: background-color 250ms var(--cubiq), color 250ms var(--cubiq);
   transition: background-color 250ms var(--cubiq), color 250ms var(--cubiq);
@@ -87,17 +72,32 @@ b {
 }
 
 .section {
-  padding: 94px 0;
+  padding: 60px 0;
 }
 .section.padding {
   padding-bottom: 0;
 }
 
 .container {
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 15px;
   /* outline: 2px solid teal; */
+}
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
 }
 
 .section .title {
@@ -166,9 +166,9 @@ b {
 
 .logo {
   font-weight: 700;
-  font-size: 26px;
+  font-size: 24px;
   letter-spacing: 0.03em;
-  line-height: 1.19;
+  line-height: normal;
   font-family: var(--akcent-font);
   color: inherit;
 }
@@ -183,10 +183,18 @@ b {
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.03em;
-  line-height: 1.14;
-  margin-top: 0;
+  line-height: normal;
   margin-bottom: 10px;
   text-transform: uppercase;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .properties__title,
+  .work-list__text,
+  .toadd-title,
+  .folowme__title {
+    text-align: start;
+  }
 }
 
 .icons-list,
@@ -428,71 +436,22 @@ b {
   cursor: pointer;
 }
 
-.header {
-  border-bottom: 1px solid var(--border-header-color);
-}
-
-.header__wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: 93px;
+  display: none;
 }
-.nav__item:not(:first-child) {
-  margin-left: 50px;
-}
-
-.nav__link:hover, .nav__link:focus, .nav__link--activ {
-  color: var(--akcent-color);
-  fill: var(--akcent-color);
-}
-.nav__link--activ::after {
-  position: absolute;
-  bottom: -1px;
-  content: "";
-  display: block;
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background-color: var(--akcent-color);
+@media screen and (min-width: 768px) {
+  .nav {
+    display: block;
+  }
 }
 
 .contacts-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: auto;
+  display: none;
 }
-.contacts-list__item:not(:first-child) {
-  margin-left: 45px;
-}
-
-.contakt-list__link {
-  color: var(--secod-color);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.contakt-list__link:hover, .contakt-list__link:focus {
-  color: var(--akcent-color);
-  fill: var(--akcent-color);
-}
-
-.contacts-list__icon {
-  fill: currentColor;
-  margin-right: 10px;
+@media screen and (min-width: 768px) {
+  .contacts-list {
+    display: block;
+  }
 }
 
 .hero {
@@ -521,17 +480,19 @@ b {
   text-transform: uppercase;
 }
 
-.properties {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+@media screen and (min-width: 768px) {
+  .properties {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-left: -30px;
+  }
 }
 
 .properties__item {
-  width: 270px;
+  width: 450px;
 }
 .properties__item::before {
   display: block;
@@ -543,14 +504,24 @@ b {
   margin-bottom: 30px;
   border-radius: 4px;
 }
+.properties__item:not(:last-child) {
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .properties__item {
+    width: calc((100% - 60px) / 2);
+    margin-left: 30px;
+  }
+  .properties__item:nth-child(n+3) {
+    margin-bottom: 0px;
+  }
+}
 
 .properties__text {
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 0.03em;
   line-height: 1.71;
-  margin-top: 0;
-  margin-bottom: 0;
   color: var(--secod-color);
 }
 
